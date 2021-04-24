@@ -1,8 +1,8 @@
 # Pubmed XML Parser 
 
-Jakarta XML Binding (JAXB) gives Java developers an efficient and standard way of mapping between XML and Java code.
-Java developers using Jakarta XML Binding are more productive because they can write less code themselves
-and do not have to be experts in XML. Jakarta XML Binding makes it easier for developers to extend
+The Pubmed Parser gives Java developers an efficient and standard way of mapping between Pubmed XML and Java code.
+Java developers using the Pubmed Parser more productive because they can write less code themselves
+and do not have to be experts in XML. Pubmed Parser makes it easier for developers to extend
 their applications with XML and Web Services technologies.
 
 The Pubmed XML Parser enables developers to perform the following operations:
@@ -26,7 +26,7 @@ Once you cd into pubmed/ folder, run the following command to kick off a build
 Refer to the pubmed/src/DTDSample.java file for instructions on how to use the parser
 
 
-# Limitations of the parser
+# Current Limitations of the parser
 
 - Currently the DTD that is used to generate JAXB bindings and classes does not include the MathML related parts of the original Pubmed DTD
 - The sample pubmed.xml included to test the marshalling and unmarshalling omits the Doctype line to avoid JAXB trying to load the DTD 

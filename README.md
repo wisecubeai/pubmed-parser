@@ -34,7 +34,7 @@ Refer to the pubmed/src/DTDSample.java file for instructions on how to use the p
 
 ## License
 
-Pubmed XML Parser is is licensed under a license - [EDL 1.0](LICENSE.md).
+Pubmed XML Parser is is licensed under a license - [BSD 3](LICENSE.txt).
 
 
 ## Contributing

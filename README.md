@@ -1,11 +1,11 @@
-# Pubmed XML Parser 
+# Pubmed Parser 
 
 The Pubmed Parser gives Java developers an efficient and standard way of mapping between Pubmed XML and Java code.
 Java developers using the Pubmed Parser more productive because they can write less code themselves
 and do not have to be experts in XML. Pubmed Parser makes it easier for developers to extend
 their applications with XML and Web Services technologies.
 
-The Pubmed XML Parser enables developers to perform the following operations:
+The Pubmed Parser enables developers to perform the following operations:
 - Unmarshal Pubmed XML content into a Java representation
 - Access and update the Java representation
 - Marshal the Java representation of the Pubmed XML content back into XML content

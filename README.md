@@ -45,6 +45,5 @@ Pubmed XML Parser is is licensed under a license - [BSD 3](LICENSE.txt).
 
 ## Contributing
 
-We use [contribution policy](CONTRIBUTING.md), which means we can only accept contributions under
-the terms of [Eclipse Contributor Agreement](http://www.eclipse.org/legal/ECA.php).
+We use [contribution policy](contributing.md), so please read it first before contributing 
 

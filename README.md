@@ -12,6 +12,12 @@ The Pubmed XML Parser enables developers to perform the following operations:
 
 This project is an attempt to parse the Pubmed XML as defined by the Pubmed DTD (https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_190101.dtd)
 
+
+# Requirements
+
+The Pubmed parser was tested on JDK 11
+
+
 # Build Instructions
 
 This project has the JAXB libraries it needs included since they do not come bundled with the JDK anymore

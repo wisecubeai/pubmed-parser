@@ -1,11 +1,10 @@
 /*
- * Copyright (c) 1997, 2020 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2021 Wisecube AI and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
  * http://www.eclipse.org/org/documents/edl-v10.php.
  *
- * SPDX-License-Identifier: BSD-3-Clause
  */
 
 package ai.wisecube.pubmed;
@@ -33,10 +32,15 @@ import ai.wisecube.pubmed.*;
 public class PubmedParser {
 
     private JAXBContext context;
+    private final static String DEFAULT_CONTEXT_PATH = "ai.wisecube.pubmed";
 
     public PubmedParser() throws Exception {
+        this(PubmedParser.DEFAULT_CONTEXT_PATH);
+    }
+
+    public PubmedParser(String contextPath) throws Exception {
         //String packageName = clazz.getClass().getPackage().getName();
-        context =  JAXBContext.newInstance("ai.wisecube.pubmed");
+        context =  JAXBContext.newInstance(contextPath);
     }
 
     public <T> T parse(StreamSource streamSource, Class<T> clazz) throws Exception {

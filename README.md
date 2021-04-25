@@ -31,7 +31,7 @@ Run the following command to kick off a build, test, docs and assembly of the Pu
 
 
 # Java Docs
-All Javadocs for the generated classes will be found under the `docs` folder
+Javadocs for the PubmedParser and all the generated pubmed xml classes will be found under the `docs` folder
 
 
 # Java Class Usage

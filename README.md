@@ -31,18 +31,18 @@ Once you cd into pubmed/ folder, run the following command to kick off a build
 
 
 	//Get XML File Content as a String
-	Path filePath = Path.of(fileName);
+	Path filePath = Path.of("pubmed.xml");
  	String fileContent = Files.readString(filePath);
         
 	//Create Pubmed Parser
 	PubmedParser parser = new PubmedParser();
 
-	//Parse XML String into Java Object
-	PubmedArticleSet articleSet = parse(fileContent, PubmedArticleSet.class);
+	//Parse XML String Content into Java Object
+	PubmedArticleSet articleSet = parser.parse(fileContent, PubmedArticleSet.class);
         
 
-	//Stringify Java object back into a String
-	System.out.println(stringify(articleSet));
+	//Stringify Java object back into a XML String
+	String xmlContent = parser.stringify(articleSet);
 
 
 

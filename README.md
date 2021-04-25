@@ -35,8 +35,7 @@ Refer to the pubmed/src/DTDSample.java file for instructions on how to use the p
 # Current Limitations of the parser
 
 - Currently the DTD that is used to generate JAXB bindings and classes does not include the MathML related parts of the original Pubmed DTD
-- The sample pubmed.xml included to test the marshalling and unmarshalling omits the Doctype line to avoid JAXB trying to load the DTD 
-- which means that you will have to modify the pubmed xml files you want to parse to omit the DOCTYPE line as well
+- DTD Validation has to be turned off in the unmarshalling code for the pubmed parser to work with raw Pubmed XML files, Refer to the DTDSample.java file on how to do this
 
 ## License
 

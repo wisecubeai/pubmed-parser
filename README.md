@@ -53,7 +53,7 @@ Run the following command to kick off a build, test and assembly of the Pubmed P
 
 # Shaded Jar Usage
 
-	Running the following command should test the shaded jar against the sample pubmed.xml included
+Running the following command should validate the shaded jar against the sample pubmed.xml included
 
 	`java -jar dist/pubmed-parser.jar schema/pubmed.xml`
 

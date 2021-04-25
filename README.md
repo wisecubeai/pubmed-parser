@@ -29,7 +29,21 @@ Once you cd into pubmed/ folder, run the following command to kick off a build
 
 # Sample Usage
 
-Refer to the [DTDSample.java](pubmed/src/DTDSample.java) file for instructions on how to use the parser
+
+	//Get XML File Content as a String
+	Path filePath = Path.of(fileName);
+ 	String fileContent = Files.readString(filePath);
+        
+	//Create Pubmed Parser
+	PubmedParser parser = new PubmedParser();
+
+	//Parse XML String into Java Object
+	PubmedArticleSet articleSet = parse(fileContent, PubmedArticleSet.class);
+        
+
+	//Stringify Java object back into a String
+	System.out.println(stringify(articleSet));
+
 
 
 # Current Limitations of the parser

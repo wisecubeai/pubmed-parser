@@ -52,8 +52,8 @@
   </target>
 
   <target name="run" depends="compile" description="Run the sample app">
-    <echo message="Running the sample application..." />
-    <java classname="DTDSample" fork="true">
+    <echo message="Running the Parser..." />
+    <java classname="ai.wisecube.pubmed.PubmedParser" fork="true">
       <classpath refid="classpath" />
       <arg path="pubmed.xml" />
     </java>

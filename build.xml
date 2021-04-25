@@ -45,7 +45,7 @@
     <echo message="Running the Parser..." />
     <java classname="ai.wisecube.pubmed.PubmedParser" fork="true">
       <classpath refid="classpath" />
-      <arg path="schema/pubmed.xml" />
+      <arg path="schema/pubmed21n1062.xml" />
     </java>
   </target>
 

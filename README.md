@@ -21,11 +21,11 @@ This project is an attempt to parse the Pubmed XML as defined by the Pubmed DTD 
 
 # Build Instructions
 
-- This project has the JAXB libraries it needs included since they do not come bundled with the JDK anymore
-- The sample pubmed xml and dtd are in the schema/ folder 
-- Run the following command to kick off a build, test and assembly of the Shaded Jar.
-- This will create a unified/shaded/fat pubmed-parser.jar in a newly created 'dist' folder
+This project has the JAXB libraries it needs included since they do not come bundled with the JDK anymore
+The sample pubmed xml and dtd are in the schema/ folder 
+The final artifact is a unified/shaded/fat called pubmed-parser.jar created in the 'dist' folder
 
+Run the following command to kick off a build, test and assembly of the Shaded Jar.
 
 `./build.sh` 
 

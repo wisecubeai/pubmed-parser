@@ -1,16 +1,15 @@
 # Pubmed Parser 
 
+This project is an attempt to create a Java parser for the Pubmed XML as defined by the [Pubmed DTD](https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_190101.dtd)
+
 The Pubmed Parser gives Java developers an efficient and standard way of mapping between Pubmed XML and Java code.
-Java developers using the Pubmed Parser more productive because they can write less code themselves
-and do not have to be experts in XML. Pubmed Parser makes it easier for developers to extend
-their applications with XML and Web Services technologies.
+Java developers using the Pubmed Parser are more productive because they can write less code themselves
+and do not have to be experts in parsing Pubmed XML. 
 
 The Pubmed Parser enables developers to perform the following operations:
 - Unmarshal Pubmed XML content into a Java representation
 - Access and update the Java representation
 - Marshal the Java representation of the Pubmed XML content back into XML content
-
-This project is an attempt to parse the Pubmed XML as defined by the Pubmed DTD (https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_190101.dtd)
 
 
 # Requirements

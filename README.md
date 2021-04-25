@@ -21,10 +21,14 @@ The Pubmed parser was tested on JDK 11
 # Build Instructions
 
 This project has the JAXB libraries it needs included since they do not come bundled with the JDK anymore
-The sample pubmed xml and dtd are in the pubmed/ folder 
-Once you cd into pubmed/ folder, run the following command to kick off a build
+The sample pubmed xml and dtd are in the schema/ folder 
 
-./build.sh 
+Run the following command to kick off a build, test and assembly of the Shaded Jar.
+This will create a unified/shaded/fat pubmed-parser.jar in a newly created 'dist' folder
+
+
+`./build.sh` 
+
 
 
 # Sample Usage

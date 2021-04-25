@@ -1,28 +1,18 @@
 <?xml version="1.0" standalone="yes"?>
 <!--
-
-    Copyright (c) 2004, 2020 Oracle and/or its affiliates. All rights reserved.
-
-    This program and the accompanying materials are made available under the
-    terms of the Eclipse Distribution License v. 1.0, which is available at
-    http://www.eclipse.org/org/documents/edl-v10.php.
-
-    SPDX-License-Identifier: BSD-3-Clause
-
+    Copyright (c) 2021 Wisecube AI and/or its affiliates. All rights reserved.
 -->
 
 <project basedir="." default="run">
   <description>
-        This sample application illustrate some of the DTD support available in 
-        the JAXB RI's extension mode. Please refer to the &lt;a href="vendor.html&gt;
-        Vendor Extensions&lt;/a&gt; page for more detail.
-
+        This application illustrate some of the DTD support available in 
+        the JAXB RI's extension mode.
         If you encounter "External parsing is disabled" error
         please set system property enableExternalEntityProcessing=true
         For example:
         export ANT_OPTS="-DenableExternalEntityProcessing=true"
-    </description>
-  <property name="jaxb.home" value="../"/>
+  </description>
+  <property name="jaxb.home" value="./"/>
   <property name="enableExternalEntityProcessing" value="true"/>
   <path id="classpath">
     <pathelement path="src" />
@@ -38,7 +28,7 @@
   <target name="compile" description="Compile all Java source files">
     <echo message="Compiling the schema..." />
     <mkdir dir="gen-src" />
-    <xjc schema="pubmed.dtd" binding="pubmed.jaxb" destdir="gen-src">
+    <xjc schema="schema/pubmed.dtd" binding="schema/pubmed.jaxb" destdir="gen-src">
       <arg value="-dtd" />
       <produces dir="gen-src" includes="**/*.java" />
     </xjc>
@@ -55,9 +45,30 @@
     <echo message="Running the Parser..." />
     <java classname="ai.wisecube.pubmed.PubmedParser" fork="true">
       <classpath refid="classpath" />
-      <arg path="pubmed.xml" />
+      <arg path="schema/pubmed.xml" />
     </java>
   </target>
+
+
+  <target name="assemble" depends="run" description="Build the Parser assembly">
+    <echo message="Building the Assembly..." />
+    <mkdir dir="dist" />
+    <mkdir dir="lib" />
+    <jar destfile="lib/main.jar">
+      <fileset dir="classes">
+        <include name="**/*"/>
+      </fileset>
+    </jar>
+    <jar destfile="dist/pubmed-parser.jar">
+      <zipgroupfileset dir="${jaxb.home}" includes="mod/*.jar" /> 
+      <zipgroupfileset dir="lib" includes="*.jar" /> 
+      <!-- other options -->
+      <manifest>
+        <attribute name="Main-Class" value="ai.wisecube.pubmed.PubmedParser" />
+      </manifest>
+    </jar> 
+  </target>
+ 
 
   <target name="javadoc" description="Generates javadoc" depends="compile">
     <echo message="Generating javadoc..." />
@@ -72,6 +83,7 @@
     <delete dir="gen-src" />
     <delete dir="schemas" />
     <delete dir="classes" />
+    <delete dir="dist" />
+    <delete dir="lib" />
   </target>
 </project>
-

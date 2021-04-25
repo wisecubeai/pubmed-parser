@@ -4,5 +4,9 @@
 # Log file
 *.log
 
-# Generated source files
-pubmed/gen-src
+# Generated folders 
+gen-src
+lib
+dist
+classes
+docs

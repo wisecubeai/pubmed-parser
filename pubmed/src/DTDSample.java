@@ -13,12 +13,14 @@ import java.io.File;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
+import javax.xml.stream.*;
+import javax.xml.transform.stream.StreamSource;
 import ai.wisecube.pubmed.*;
 /**
  *
  *
  * @author
- *     Kohsuke Kawaguchi (kohsuke.kawaguchi@sun.com)
+ *     Vishnu Vettrivel 
  */
 public class DTDSample {
 
@@ -39,9 +41,14 @@ public class DTDSample {
         // what schema language you use.
 
         JAXBContext context = JAXBContext.newInstance("ai.wisecube.pubmed");
+        XMLInputFactory xif = XMLInputFactory.newFactory();
+        xif.setProperty(XMLInputFactory.SUPPORT_DTD, false);
+        
+	XMLStreamReader xsr = xif.createXMLStreamReader(new StreamSource(fileName));
+
 
         // unmarshal a file. Just like you've always been doing.
-        PubmedArticleSet articleSet = (PubmedArticleSet) context.createUnmarshaller().unmarshal(new File(fileName));
+	PubmedArticleSet articleSet = (PubmedArticleSet) context.createUnmarshaller().unmarshal(xsr);
         
 	// marshal it. Nothing new.
         Marshaller m = context.createMarshaller();

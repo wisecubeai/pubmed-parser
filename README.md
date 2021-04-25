@@ -35,6 +35,7 @@ Once you cd into pubmed/ folder, run the following command to kick off a build
  	String fileContent = Files.readString(filePath);
         
 	//Create Pubmed Parser
+	//The PubmedParser is built to be thread-safe and should not need to be created more than once per Application
 	PubmedParser parser = new PubmedParser();
 
 	//Parse XML String Content into Java Object
@@ -43,6 +44,7 @@ Once you cd into pubmed/ folder, run the following command to kick off a build
 
 	//Stringify Java object back into a XML String
 	String xmlContent = parser.stringify(articleSet);
+
 
 
 

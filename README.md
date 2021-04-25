@@ -15,16 +15,16 @@ This project is an attempt to parse the Pubmed XML as defined by the Pubmed DTD 
 
 # Requirements
 
-The Pubmed parser was tested on JDK 11
+- [JDK 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+- [Apache Ant](https://ant.apache.org/manual/install.html)
 
 
 # Build Instructions
 
-This project has the JAXB libraries it needs included since they do not come bundled with the JDK anymore
-The sample pubmed xml and dtd are in the schema/ folder 
-
-Run the following command to kick off a build, test and assembly of the Shaded Jar.
-This will create a unified/shaded/fat pubmed-parser.jar in a newly created 'dist' folder
+- This project has the JAXB libraries it needs included since they do not come bundled with the JDK anymore
+- The sample pubmed xml and dtd are in the schema/ folder 
+- Run the following command to kick off a build, test and assembly of the Shaded Jar.
+- This will create a unified/shaded/fat pubmed-parser.jar in a newly created 'dist' folder
 
 
 `./build.sh` 

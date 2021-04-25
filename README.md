@@ -49,7 +49,7 @@ Once you cd into pubmed/ folder, run the following command to kick off a build
 # Current Limitations of the parser
 
 - Currently the DTD that is used to generate JAXB bindings and classes does not include the MathML related parts of the original Pubmed DTD
-- DTD Validation has to be turned off in the unmarshalling code for the pubmed parser to work with raw Pubmed XML files, Refer to the [DTDSample.java](pubmed/src/DTDSample.java) file on how to do this
+- DTD Validation will be turned off by default in the Parser. You can turn it back on if needed by calling the right parameter in the parser method. However we have not tested it with being on.
 
 ## License
 

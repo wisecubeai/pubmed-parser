@@ -29,13 +29,13 @@ Once you cd into pubmed/ folder, run the following command to kick off a build
 
 # Sample Usage
 
-Refer to the pubmed/src/DTDSample.java file for instructions on how to use the parser
+Refer to the [DTDSample.java](pubmed/src/DTDSample.java) file for instructions on how to use the parser
 
 
 # Current Limitations of the parser
 
 - Currently the DTD that is used to generate JAXB bindings and classes does not include the MathML related parts of the original Pubmed DTD
-- DTD Validation has to be turned off in the unmarshalling code for the pubmed parser to work with raw Pubmed XML files, Refer to the DTDSample.java file on how to do this
+- DTD Validation has to be turned off in the unmarshalling code for the pubmed parser to work with raw Pubmed XML files, Refer to the [DTDSample.java](pubmed/src/DTDSample.java) file on how to do this
 
 ## License
 

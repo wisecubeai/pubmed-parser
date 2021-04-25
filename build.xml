@@ -75,6 +75,7 @@
     <mkdir dir="docs/api" />
     <javadoc sourcepath="gen-src" destdir="docs/api" windowtitle="dtd" useexternalfile="yes">
       <fileset dir="." includes="gen-src/**/*.java" excludes="**/impl/**/*.java" />
+      <fileset dir="." includes="src/**/*.java" excludes="**/impl/**/*.java" />
       <classpath refid="classpath" />
     </javadoc>
   </target>

@@ -25,10 +25,13 @@ This project has the JAXB libraries it needs included since they do not come bun
 The sample pubmed.xml and pubmed.dtd are located in the schema/ folder 
 The distribution jar is a unified/shaded/fat jar called `pubmed-parser.jar` created in the 'dist' folder
 
-Run the following command to kick off a build, test and assembly of the Pubmed Parser.
+Run the following command to kick off a build, test, docs and assembly of the Pubmed Parser.
 
 `./build.sh` 
 
+
+# Java Docs
+All Javadocs for the generated classes will be found under the `docs` folder
 
 
 # Java Class Usage

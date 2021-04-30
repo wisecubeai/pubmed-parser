@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ai.wisecube</groupId>
+    <artifactId>pubmed-parser</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <outjar>${project.build.directory}/${project.artifactId}-${project.version}.jar</outjar>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>default-jar</id>
+                        <phase>none</phase>
+                        <configuration>
+                            <finalName>unwanted</finalName>
+                            <classifier>unwanted</classifier>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <ant antfile="${basedir}/build.xml" target="clean"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>${project.artifactId}-artifact</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <ant antfile="${basedir}/build.xml" target="compile"/>
+                                <ant antfile="${basedir}/build.xml" target="assemble"/>
+                                <copy file="${basedir}/dist/pubmed-parser.jar" tofile="${outjar}" />
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <extensions>
+            <extension>
+                <groupId>com.allogy.maven.wagon</groupId>
+                <artifactId>maven-s3-wagon</artifactId>
+                <version>1.2.0</version>
+            </extension>
+        </extensions>
+    </build>
+
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>wisecube-s3-maven-repo</id>
+            <name>Snapshots-Repo</name>
+            <url>s3://wisecube-maven-repo/snapshot</url>
+        </snapshotRepository>
+        <repository>
+            <id>wisecube-s3-maven-repo</id>
+            <name>Release-Repo</name>
+            <url>s3://wisecube-maven-repo/release</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>wisecube-s3-maven-repo</id>
+            <name>Wisecube S3 Maven Repo</name>
+            <url>https://wisecube-maven-repo.s3.amazonaws.com/snapshot</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+</project>
